@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{49ED9008-E656-4B86-B55B-E4DF007BD569}</ProjectGuid>
+    <ProjectGuid>{F54BDB80-5760-495A-BF51-4F66F9DD39C5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BusinessLayer</RootNamespace>
-    <AssemblyName>BusinessLayer</AssemblyName>
+    <RootNamespace>CrossCutingLayer</RootNamespace>
+    <AssemblyName>CrossCutingLayer</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -33,7 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,19 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IServiceStudent.cs" />
-    <Compile Include="Implementations\ServiceStudent.cs" />
+    <Compile Include="Dto\Standard\ResponseDto.cs" />
+    <Compile Include="Dto\StudentDto.cs" />
+    <Compile Include="Helpers\Validations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CrossCutingLayer\CrossCutingLayer.csproj">
-      <Project>{F54BDB80-5760-495A-BF51-4F66F9DD39C5}</Project>
-      <Name>CrossCutingLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
-      <Project>{139bb745-0d33-4194-a778-2ae7cc333813}</Project>
-      <Name>DataLayer</Name>
-    </ProjectReference>
+    <Compile Include="Utils\PaginatedList.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
